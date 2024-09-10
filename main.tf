@@ -6,7 +6,7 @@ resource "mgc_kubernetes_cluster" "this" {
   enabled_server_group = var.enabled_server_group
   description          = var.description
   allowed_cidrs        = var.allowed_cidrs
-  async_creation       =  var.async_creation
+  async_creation       = var.async_creation
 }
 
 resource "time_sleep" "this" {
@@ -17,12 +17,12 @@ resource "time_sleep" "this" {
 
 # Create a Nodepool
 resource "mgc_kubernetes_nodepool" "this" {
-  depends_on = [time_sleep.this, mgc_kubernetes_cluster.this]
-  for_each   = var.node_pools
-  name       = "${mgc_kubernetes_cluster.this[0].name}-${each.key}"
-  cluster_id = mgc_kubernetes_cluster.this[0].id
-  flavor_name     = try(each.value.flavor, null)
-  replicas   =   each.value.min_replicas < each.value.max_replicas ? each.value.min_replicas : "ERRO: min_replicas need is less that max_replicas"
+  depends_on   = [time_sleep.this, mgc_kubernetes_cluster.this]
+  for_each     = var.node_pools
+  name         = "${mgc_kubernetes_cluster.this[0].name}-${each.key}"
+  cluster_id   = mgc_kubernetes_cluster.this[0].id
+  flavor_name  = try(each.value.flavor, null)
+  replicas     = each.value.min_replicas < each.value.max_replicas ? each.value.min_replicas : "ERRO: min_replicas need is less that max_replicas"
   min_replicas = each.value.min_replicas < each.value.max_replicas ? each.value.min_replicas : "ERRO: min_replicas need is less that max_replicas"
   max_replicas = each.value.max_replicas > each.value.min_replicas ? each.value.max_replicas : "ERRO: max_replicas need is great that min_replicas"
   # lifecycle {
@@ -30,7 +30,7 @@ resource "mgc_kubernetes_nodepool" "this" {
   # }
   # tags   = try(each.value.tags, null)
   # taints = try(each.value.taints, null)
- }
+}
 
 # resource "mgc_container_registry_registries" "this" {
 #   depends_on = [mgc_kubernetes_cluster.this]
