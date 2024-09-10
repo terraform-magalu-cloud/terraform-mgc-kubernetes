@@ -1,8 +1,13 @@
 terraform {
   required_providers {
     mgc = {
-      source  = "magalucloud/mgc"
+      source  = "MagaluCloud/mgc"
       version = "0.24.5"
     }
+    random = {
+      source  = "hashicorp/random"
+      version = "3.6.2"
+    }
   }
+  required_version = ">= 1.5.0"
 }
