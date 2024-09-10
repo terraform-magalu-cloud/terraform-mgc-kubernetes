@@ -10,16 +10,16 @@ variable "name" {
   type        = string
 }
 
-variable "enabled_bastion" {
-  description = "value"
-  default     = false
-  type        = string
-  validation {
-    condition     = !var.enabled_bastion
-    error_message = "Provider <= 0.20.1 have bug, keep this value like false"
-  }
+# variable "enabled_bastion" {
+#   description = "value"
+#   default     = false
+#   type        = string
+#   validation {
+#     condition     = !var.enabled_bastion
+#     error_message = "Provider <= 0.20.1 have bug, keep this value like false"
+#   }
 
-}
+# }
 
 # variable "flavor" {
 #   description = "value"
@@ -32,18 +32,18 @@ variable "node_pools" {
   type        = any
   default = {
     default = {
-    flavor   = "cloud-k8s.gp1.medium"
-    min_replicas = 2
-    max_replicas = 5
+      flavor       = "cloud-k8s.gp1.medium"
+      min_replicas = 2
+      max_replicas = 5
+    }
   }
 }
-}
 
-variable "additional_node_pools" {
-  description = "value"
-  type        = map(any)
-  default     = {}
-}
+# variable "additional_node_pools" {
+#   description = "value"
+#   type        = map(any)
+#   default     = {}
+# }
 
 
 
@@ -70,10 +70,10 @@ variable "description" {
 }
 
 variable "async_creation" {
-  type = bool
+  type        = bool
   description = "Habilita ou Desabilita criação assincrona do kubernetes"
-  default = false
-  
+  default     = false
+
 }
 
 # variable "min_replicas" {
@@ -100,8 +100,8 @@ variable "allowed_cidrs" {
 #   default     = false
 # }
 
-variable "zone" {
-  description = "value"
-  type        = string
-  default     = null
-}
+# variable "zone" {
+#   description = "value"
+#   type        = string
+#   default     = null
+# }
