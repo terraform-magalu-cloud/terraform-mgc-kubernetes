@@ -15,4 +15,5 @@ module "kubernetes_example" {
   name               = "${var.name}-${random_string.sufix.id}"
   kubernetes_version = "v1.30.2"
   description        = "kubernetes example"
+  async_creation     = true
 }

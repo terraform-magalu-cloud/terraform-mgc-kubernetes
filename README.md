@@ -5,6 +5,7 @@
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.0 |
 | <a name="requirement_mgc"></a> [mgc](#requirement\_mgc) | 0.27.0 |
 | <a name="requirement_random"></a> [random](#requirement\_random) | 3.6.3 |
+| <a name="requirement_time"></a> [time](#requirement\_time) | 0.12.1 |
 
 ## Providers
 
@@ -12,6 +13,7 @@
 |------|---------|
 | <a name="provider_mgc"></a> [mgc](#provider\_mgc) | 0.27.0 |
 | <a name="provider_random"></a> [random](#provider\_random) | 3.6.3 |
+| <a name="provider_time"></a> [time](#provider\_time) | 0.12.1 |
 
 ## Modules
 
@@ -24,20 +26,21 @@ No modules.
 | [mgc_kubernetes_cluster.this](https://registry.terraform.io/providers/magalucloud/mgc/0.27.0/docs/resources/kubernetes_cluster) | resource |
 | [mgc_kubernetes_nodepool.this](https://registry.terraform.io/providers/magalucloud/mgc/0.27.0/docs/resources/kubernetes_nodepool) | resource |
 | [random_string.this](https://registry.terraform.io/providers/hashicorp/random/3.6.3/docs/resources/string) | resource |
+| [time_sleep.this](https://registry.terraform.io/providers/hashicorp/time/0.12.1/docs/resources/sleep) | resource |
 | [mgc_kubernetes_cluster.this](https://registry.terraform.io/providers/magalucloud/mgc/0.27.0/docs/data-sources/kubernetes_cluster) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_allowed_cidrs"></a> [allowed\_cidrs](#input\_allowed\_cidrs) | value | `list(string)` | `null` | no |
-| <a name="input_async_creation"></a> [async\_creation](#input\_async\_creation) | Habilita ou Desabilita criação assincrona do kubernetes | `bool` | `false` | no |
+| <a name="input_allowed_cidrs"></a> [allowed\_cidrs](#input\_allowed\_cidrs) | List of allowed CIDR blocks for API server access | `list(string)` | `null` | no |
+| <a name="input_async_creation"></a> [async\_creation](#input\_async\_creation) | Enables asynchronous creation of the Kubernetes cluster | `bool` | `false` | no |
 | <a name="input_create"></a> [create](#input\_create) | Defines whether resource will be created or not | `bool` | `true` | no |
-| <a name="input_description"></a> [description](#input\_description) | value | `string` | `""` | no |
-| <a name="input_enabled_server_group"></a> [enabled\_server\_group](#input\_enabled\_server\_group) | value | `bool` | `false` | no |
-| <a name="input_kubernetes_version"></a> [kubernetes\_version](#input\_kubernetes\_version) | value | `string` | `"v1.28.5"` | no |
-| <a name="input_name"></a> [name](#input\_name) | Defines the name of resource | `string` | `"example-k8s"` | no |
-| <a name="input_node_pools"></a> [node\_pools](#input\_node\_pools) | value | `any` | <pre>{<br>  "default": {<br>    "flavor": "cloud-k8s.gp1.medium",<br>    "max_replicas": 5,<br>    "min_replicas": 2<br>  }<br>}</pre> | no |
+| <a name="input_description"></a> [description](#input\_description) | A brief description of the Kubernetes cluster | `string` | `""` | no |
+| <a name="input_enabled_server_group"></a> [enabled\_server\_group](#input\_enabled\_server\_group) | Enables the use of a server group with anti-affinity policy during the creation of the cluster and its node pools | `bool` | `false` | no |
+| <a name="input_kubernetes_version"></a> [kubernetes\_version](#input\_kubernetes\_version) | he native Kubernetes version of the cluster. Use the standard vX.Y.Z format | `string` | `"v1.28.5"` | no |
+| <a name="input_name"></a> [name](#input\_name) | Kubernetes cluster name. Must be unique within a namespace and follow naming rules | `string` | `"example-k8s"` | no |
+| <a name="input_node_pools"></a> [node\_pools](#input\_node\_pools) | Map list of node pools | `any` | <pre>{<br>  "default": {<br>    "flavor": "cloud-k8s.gp1.medium",<br>    "max_replicas": 5,<br>    "min_replicas": 2<br>  }<br>}</pre> | no |
 
 ## Outputs
 
