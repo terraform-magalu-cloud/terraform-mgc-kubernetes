@@ -5,13 +5,13 @@ variable "create" {
 }
 
 variable "name" {
-  description = "Defines the name of resource"
+  description = "Kubernetes cluster name. Must be unique within a namespace and follow naming rules"
   default     = "example-k8s"
   type        = string
 }
 
 variable "node_pools" {
-  description = "value"
+  description = "Map list of node pools"
   type        = any
   default = {
     default = {
@@ -23,7 +23,7 @@ variable "node_pools" {
 }
 
 variable "enabled_server_group" {
-  description = "value"
+  description = "Enables the use of a server group with anti-affinity policy during the creation of the cluster and its node pools"
   type        = bool
   default     = false
   validation {
@@ -33,26 +33,26 @@ variable "enabled_server_group" {
 }
 
 variable "kubernetes_version" {
-  description = "value"
+  description = "he native Kubernetes version of the cluster. Use the standard vX.Y.Z format"
   type        = string
   default     = "v1.28.5"
 }
 
 variable "description" {
-  description = "value"
+  description = "A brief description of the Kubernetes cluster"
   type        = string
   default     = ""
 }
 
 variable "async_creation" {
   type        = bool
-  description = "Habilita ou Desabilita criação assincrona do kubernetes"
+  description = "Enables asynchronous creation of the Kubernetes cluster"
   default     = false
 
 }
 
 variable "allowed_cidrs" {
-  description = "value"
+  description = "List of allowed CIDR blocks for API server access"
   type        = list(string)
   default     = null
 }
