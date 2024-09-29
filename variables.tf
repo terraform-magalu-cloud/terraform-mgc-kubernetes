@@ -10,23 +10,6 @@ variable "name" {
   type        = string
 }
 
-# variable "enabled_bastion" {
-#   description = "value"
-#   default     = false
-#   type        = string
-#   validation {
-#     condition     = !var.enabled_bastion
-#     error_message = "Provider <= 0.20.1 have bug, keep this value like false"
-#   }
-
-# }
-
-# variable "flavor" {
-#   description = "value"
-#   default     = "cloud-k8s.gp1.medium"
-#   type        = string
-# }
-
 variable "node_pools" {
   description = "value"
   type        = any
@@ -38,14 +21,6 @@ variable "node_pools" {
     }
   }
 }
-
-# variable "additional_node_pools" {
-#   description = "value"
-#   type        = map(any)
-#   default     = {}
-# }
-
-
 
 variable "enabled_server_group" {
   description = "value"
@@ -76,32 +51,8 @@ variable "async_creation" {
 
 }
 
-# variable "min_replicas" {
-#   type        = number
-#   default     = 3
-#   description = "value"
-# }
-
-# variable "max_replicas" {
-#   type        = number
-#   default     = 4
-#   description = "value"
-# }
-
 variable "allowed_cidrs" {
   description = "value"
   type        = list(string)
   default     = null
 }
-
-# variable "enable_container_registry" {
-#   description = "value"
-#   type        = bool
-#   default     = false
-# }
-
-# variable "zone" {
-#   description = "value"
-#   type        = string
-#   default     = null
-# }
