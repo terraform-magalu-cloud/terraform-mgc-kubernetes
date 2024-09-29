@@ -20,14 +20,14 @@ resource "random_string" "this" {
 }
 
 resource "time_sleep" "this" {
-  depends_on = [ mgc_kubernetes_cluster.this ]
-  count = var.async_creation ? 1 : 0
+  depends_on      = [mgc_kubernetes_cluster.this]
+  count           = var.async_creation ? 1 : 0
   create_duration = "15m"
 }
 
 # Create a Nodepool
 resource "mgc_kubernetes_nodepool" "this" {
-  depends_on   = [mgc_kubernetes_cluster.this,time_sleep.this]
+  depends_on   = [mgc_kubernetes_cluster.this, time_sleep.this]
   for_each     = var.node_pools
   name         = "${mgc_kubernetes_cluster.this[0].name}-${each.key}-${random_string.this.id}"
   cluster_id   = mgc_kubernetes_cluster.this[0].id
