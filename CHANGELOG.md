@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.1](https://github.com/terraform-magalu-cloud/terraform-mgc-kubernetes/compare/v1.0.0...v1.0.1) (2024-09-29)
+
+
+### Bug Fixes
+
+* assync true and improv docs ([cbecea2](https://github.com/terraform-magalu-cloud/terraform-mgc-kubernetes/commit/cbecea2d4902e9c7218b4201f3123d7c75b9fecc))
+
 ## 1.0.0 (2024-09-29)
 
 
