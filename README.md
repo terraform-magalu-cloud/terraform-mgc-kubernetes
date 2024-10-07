@@ -3,7 +3,7 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.0 |
-| <a name="requirement_mgc"></a> [mgc](#requirement\_mgc) | 0.27.0 |
+| <a name="requirement_mgc"></a> [mgc](#requirement\_mgc) | ~> 0.27.0 |
 | <a name="requirement_random"></a> [random](#requirement\_random) | 3.6.3 |
 | <a name="requirement_time"></a> [time](#requirement\_time) | 0.12.1 |
 
@@ -11,7 +11,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_mgc"></a> [mgc](#provider\_mgc) | 0.27.0 |
+| <a name="provider_mgc"></a> [mgc](#provider\_mgc) | 0.27.1 |
 | <a name="provider_random"></a> [random](#provider\_random) | 3.6.3 |
 | <a name="provider_time"></a> [time](#provider\_time) | 0.12.1 |
 
@@ -23,11 +23,11 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [mgc_kubernetes_cluster.this](https://registry.terraform.io/providers/magalucloud/mgc/0.27.0/docs/resources/kubernetes_cluster) | resource |
-| [mgc_kubernetes_nodepool.this](https://registry.terraform.io/providers/magalucloud/mgc/0.27.0/docs/resources/kubernetes_nodepool) | resource |
+| [mgc_kubernetes_cluster.this](https://registry.terraform.io/providers/magalucloud/mgc/latest/docs/resources/kubernetes_cluster) | resource |
+| [mgc_kubernetes_nodepool.this](https://registry.terraform.io/providers/magalucloud/mgc/latest/docs/resources/kubernetes_nodepool) | resource |
 | [random_string.this](https://registry.terraform.io/providers/hashicorp/random/3.6.3/docs/resources/string) | resource |
 | [time_sleep.this](https://registry.terraform.io/providers/hashicorp/time/0.12.1/docs/resources/sleep) | resource |
-| [mgc_kubernetes_cluster.this](https://registry.terraform.io/providers/magalucloud/mgc/0.27.0/docs/data-sources/kubernetes_cluster) | data source |
+| [mgc_kubernetes_cluster.this](https://registry.terraform.io/providers/magalucloud/mgc/latest/docs/data-sources/kubernetes_cluster) | data source |
 
 ## Inputs
 
