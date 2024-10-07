@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.2](https://github.com/terraform-magalu-cloud/terraform-mgc-kubernetes/compare/v1.0.1...v1.0.2) (2024-10-07)
+
+
+### Bug Fixes
+
+* adjust constrain provider version ([b45ae39](https://github.com/terraform-magalu-cloud/terraform-mgc-kubernetes/commit/b45ae39ab44e38bcbc26f62deb0de8337635d700))
+
 ## [1.0.1](https://github.com/terraform-magalu-cloud/terraform-mgc-kubernetes/compare/v1.0.0...v1.0.1) (2024-09-29)
 
 
