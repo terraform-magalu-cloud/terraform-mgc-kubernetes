@@ -3,7 +3,7 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.0 |
-| <a name="requirement_mgc"></a> [mgc](#requirement\_mgc) | 0.27.0 |
+| <a name="requirement_mgc"></a> [mgc](#requirement\_mgc) | ~> 0.27.0 |
 | <a name="requirement_random"></a> [random](#requirement\_random) | 3.6.3 |
 
 ## Providers
