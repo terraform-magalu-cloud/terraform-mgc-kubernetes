@@ -1,23 +1,20 @@
 name: Release
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
       - master
-    paths:
-      - '**/*.tpl'
-      - '**/*.py'
-      - '**/*.tf'
-      - '.github/workflows/release.yml'
+  workflow_dispatch:
 
 jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
-    # Skip running release workflow on forks
-    if: github.repository_owner == 'terraform-magalu-cloud'
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,13 +22,16 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
 
-      - name: Release
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+
+      - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v4
         with:
-          semantic_version: 23.0.8
           extra_plugins: |
-            @semantic-release/changelog@6.0.3
-            @semantic-release/git@10.0.1
-            conventional-changelog-conventionalcommits@7.0.2
+            @semantic-release/changelog
+            @semantic-release/git
         env:
-          GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
