@@ -4,6 +4,32 @@ All notable changes to this project will be documented in this file.
 
 ## [2.0.0](https://github.com/terraform-magalu-cloud/terraform-mgc-kubernetes/compare/v1.0.2...v2.0.0) (2026-11-21)
 
+
+### ⚠ BREAKING CHANGES
+
+* - Dropped deprecated project_id variable
+- Renamed outputs: subnet_id -> subnet_ids, cidr -> cluster_ipv4_cidr, dropped zone
+- Changed default node pool flavor to BV2-4-40
+- Raised minimum provider version to mgc ~> 0.56.0
+
+### Features
+
+* add manual workflow dispatch and release info parsing to telegram notification action ([c113e3c](https://github.com/terraform-magalu-cloud/terraform-mgc-kubernetes/commit/c113e3c4889084d9609ca00bc41750b09f42fa0b))
+* add telegram notifications for releases and update CI workflows ([5b17329](https://github.com/terraform-magalu-cloud/terraform-mgc-kubernetes/commit/5b17329d3bdb059cfd6110262c47b1e350111a7b))
+* upgrade provider to mgc 0.56.0 and adopt new VM machine types ([c6c9b33](https://github.com/terraform-magalu-cloud/terraform-mgc-kubernetes/commit/c6c9b33431957cddb1a20960c6b52e1ff682d7d5))
+
+
+### Bug Fixes
+
+* bump required_version to >= 1.11.0 for write-only attribute support ([cb8b8ed](https://github.com/terraform-magalu-cloud/terraform-mgc-kubernetes/commit/cb8b8ed13b4888d84c84c487800ea0cd20efc053))
+* **ci:** add conventional-changelog-conventionalcommits to semantic-release extra_plugins ([53c062a](https://github.com/terraform-magalu-cloud/terraform-mgc-kubernetes/commit/53c062a5997c2dc36db780f899a09e69304149c6))
+* **ci:** pin conventional-changelog-conventionalcommits to v7 ([5abe78a](https://github.com/terraform-magalu-cloud/terraform-mgc-kubernetes/commit/5abe78a08e8271a4de0576195daeb246d3bec12d))
+* **ci:** pin semantic-release to v23.0.8 with compatible plugins and fallback token ([f7474c4](https://github.com/terraform-magalu-cloud/terraform-mgc-kubernetes/commit/f7474c46a1b5ea22a511d19db4285e71fb6080fd))
+* **ci:** update pre-commit-terraform to v1.99.5 and fix terraform_docs args ([a726b6a](https://github.com/terraform-magalu-cloud/terraform-mgc-kubernetes/commit/a726b6ad184071a5b4359935e0f4e039a7b58746))
+* **ci:** use native GITHUB_TOKEN instead of SEMANTIC_RELEASE_TOKEN ([54d9610](https://github.com/terraform-magalu-cloud/terraform-mgc-kubernetes/commit/54d9610a84eb99209174af106fdb5f2b0f3a9e41))
+
+## [2.0.0](https://github.com/terraform-magalu-cloud/terraform-mgc-kubernetes/compare/v1.0.2...v2.0.0) (2026-11-21)
+
 ### ⚠ BREAKING CHANGES
 
 * **provider**: Raised minimum provider version to `magalucloud/mgc ~> 0.56.0`.
