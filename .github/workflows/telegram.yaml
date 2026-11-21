@@ -9,10 +9,21 @@ on:
         default: 'latest'
   release:
     types: [published]
+  workflow_run:
+    workflows: ["Release"]
+    types:
+      - completed
+
+permissions:
+  contents: read
 
 jobs:
   notify:
     name: Send Telegram Message
+    if: >
+      github.event_name == 'release' ||
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
     runs-on: ubuntu-latest
     steps:
       - name: Prepare Release Info
