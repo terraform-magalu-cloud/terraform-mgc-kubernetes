@@ -12,3 +12,9 @@ output "region" {
   description = "Identifier of the region where the Kubernetes cluster is located"
   value       = module.kubernetes_example.region
 }
+
+output "kubeconfig" {
+  description = "Raw Kubeconfig YAML for cluster access"
+  value       = module.kubernetes_example.kubeconfig
+  sensitive   = true
+}
